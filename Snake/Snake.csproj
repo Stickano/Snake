@@ -68,7 +68,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="models\Game.cs" />
+    <Compile Include="models\GamePoints.cs" />
     <Compile Include="models\Snake.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">

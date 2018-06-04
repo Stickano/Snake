@@ -15,10 +15,10 @@ namespace Snake.models
     class Snake : INotifyPropertyChanged
     {
         private int _direction;
-
         public List<Point> BodyPoints;
-
         public TimeSpan Speed { get; }
+        public Brush color { get; }
+        public int BodySize { get; }
         //public Point CurrentPosition { get; set; }
         public Point CurrentPosition;
         public int Length { get; set; }
@@ -40,29 +40,13 @@ namespace Snake.models
         {
             Speed = new TimeSpan(10000);
             CurrentPosition = new Point(100,100);
+            color = Brushes.Green;
+            BodySize = 8;
             Length = 100;
             Direction = 0;
             PreviousDirection = 0;
-
             BodyPoints = new List<Point>();
-            BodyPoints.Add(CurrentPosition);
         }
-
-
-        /// <summary>
-        /// Will return the Ellipse (body) object of the snake 
-        /// </summary>
-        /// <returns>The snake body</returns>
-        public Ellipse PaintSnake()
-        {
-            Ellipse body = new Ellipse();
-            body.Fill = Brushes.Green;
-            body.Width = 8;
-            body.Height = 8;
-
-            return body;
-        }
-
 
         #region propertychanged
         public event PropertyChangedEventHandler PropertyChanged;
